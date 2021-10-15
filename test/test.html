@@ -1,0 +1,14 @@
+<body>
+<script>
+if (location.hash == '') {
+  frame = document.body.appendChild(document.createElement('iframe'));
+  frame.src = location + '#child1';
+  frame.onload = () => setTimeout(() => {
+    frame.contentWindow.onpopstate = () => frame.remove();
+
+    frame2 = frame.contentDocument.body.appendChild(document.createElement('iframe'));
+    frame2.contentWindow.open(location + '#child2', '_parent');
+  }, 0);
+}
+</script>
+</body>
