@@ -27,7 +27,8 @@
             alert("The webkit works perfectly on your version!");
             });
         }
-        
+        /// EventHandler::keyEvent` doesn't protect `this` from being unexpectedly destroyed by a JS event handler. 
+        /// Such a handler may be triggered by a `keydown` event inside `internalKeyEvent`[1]. When control returns to `keyEvent`, it loads the `m_frame` field from potentially freed memory[2].
         
         async function testwebkit() {
             try{
@@ -63,10 +64,10 @@
             <br>
         <img src="https://wallpapercrafter.com/th800/76813-mr-robot-tv-shows-hd-4k.jpg">
         <br>
-        <button class="button" onclick="testwebkit()">CVE ON PS4 Browser 8.XX</button>
-            <button class="button" onclick="testwebkit2()">WEBKIT TEST (PS4, iOS)</button><br>
-            <button class="button" onclick="cve()">Webkit heap-use-after-free</button><br>
-                    <p2 style="color:#E6E6FA">Webkit: Use-after-free and Webkit: heap-use-after-free / Credit: @KameleonRe</p2>
+        <button class="button" onclick="testwebkit()">CVE On PS4 Browser 8.XX</button>
+            <button class="button" onclick="testwebkit2()">Webkit Testing (PS4, iOS)</button><br>
+            <button class="button" onclick="cve()">Webkit Heap-Use-After-Free</button><br>
+                    <p2 style="color:#E6E6FA">Webkit: Use-after-free and Webkit: heap-use-after-free / Site: @Zellix67 Credit: @KameleonRe</p2>
         </center>
     </body>
 </html>
