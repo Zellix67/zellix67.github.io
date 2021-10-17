@@ -8,6 +8,7 @@ cache_frame.style.display = 'none';
 pi = cache_frame.contentDocument.appendChild(
     document.createProcessingInstruction('xml-stylesheet',
         'type="text/xml" href="stylesheet.xml"'));
+    alert("test 1 OK!");
 
 setTimeout(() => {
   h1.textContent = 'click me';
@@ -20,11 +21,13 @@ setTimeout(() => {
     document.appendChild(document.createElement('root'));
 
     document.close(); // triggers an XSLT transformation
+      alert("test 2 OK!");
   });
 
   document.addEventListener('pointerdown', (event) => {
     document.body.setPointerCapture(event.pointerId);
   });
 }, 2000); // enough time for the style sheet to be cached
+    alert("test 3 OK!")
 </script>
 </body> 
