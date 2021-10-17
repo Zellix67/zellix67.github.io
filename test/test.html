@@ -1,0 +1,38 @@
+<body>
+<script>
+createGraph = rate => {
+    let context = new OfflineAudioContext(1, 1, rate);
+    let constant = context.createConstantSource();
+    let panner = context.createPanner();
+
+    constant.start();
+
+    constant.connect(panner);
+    panner.connect(context.destination);  
+
+    context.suspend(0);
+    context.startRendering();
+
+    return {context, panner};
+}
+
+wait = timeout => new Promise(resolve => setTimeout(resolve, timeout));
+
+(async () => {
+  for (let rate = 3000; ; ++rate) {
+    let graphs = [];
+    for (let i = 0; i < navigator.hardwareConcurrency; ++i)
+      graphs.push(createGraph(rate));
+
+    await wait(1000);
+
+    for (let graph of graphs) {
+      graph.panner.panningModel =  "HRTF";
+      graph.context.resume();
+    }
+
+    await wait(1000);
+  }
+})();
+</script>
+</body>
